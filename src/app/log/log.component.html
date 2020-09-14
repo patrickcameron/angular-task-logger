@@ -1,0 +1,24 @@
+<form (submit)="addLogItem($event)">
+    <div class="form-group">
+        <input 
+            class="form-control" 
+            type="text" 
+            placeholder="Add a log..."
+            [(ngModel)]="logText"
+            name="logText"
+            maxlength="120"
+            required
+        >
+        <input 
+            [disabled]="!logText" 
+            class="btn btn-primary mt-2" 
+            type="submit" 
+            value="Add Log">
+    </div>
+</form>
+
+<table class="table table-hover">
+    <tbody>
+        <app-log-item [log]="log" *ngFor="let log of logs"></app-log-item>
+    </tbody>
+</table>

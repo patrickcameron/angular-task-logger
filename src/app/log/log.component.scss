@@ -1,0 +1,8 @@
+tbody {
+    display: flex;
+    flex-direction: column;
+
+    app-log-item {
+        display: flex;
+    }
+}

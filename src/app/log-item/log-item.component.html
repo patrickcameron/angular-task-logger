@@ -1,0 +1,18 @@
+ <tr>
+    <td *ngIf="!isEditMode">{{ log.name }}</td>
+    <td *ngIf="isEditMode">
+        <form class="form form-inline">
+            <div class="form-group row">
+                <input class="form-control" type="text" name="name" id="" [(ngModel)]="log.name">
+                <input class="btn btn-primary ml-2" type="submit" value="Save" (click)="editLogItem(log)">
+            </div>
+        </form>
+    </td>
+    <td>
+        <time>{{ log.date | date:'short' }}</time>
+    </td>
+    <td class="text-right">
+        <button (click)="isEditMode = !isEditMode" class="btn btn-light mr-3">Edit</button>
+        <button (click)="deleteLogItem(log.id)" class="btn btn-light">Delete</button>
+    </td>
+</tr>
